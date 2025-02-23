@@ -1,0 +1,150 @@
+.piano {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  min-height: 220px;
+  margin: auto;
+}
+
+.white-key {
+  width: 60px;
+  height: 200px;
+  background-color: white;
+  border: 1px solid #333;
+  z-index: 1;
+  margin: 0;
+}
+
+.black-key {
+  width: 40px;
+  height: 120px;
+  background-color: black;
+  margin: 0 -20px;
+  /* negative margin to overlap with white keys */
+  z-index: 2;
+}
+
+.white-key:hover {
+  background-color: #f0f0f0;
+}
+
+.black-key:hover {
+  background-color: #333;
+}
+
+.white-key:active {
+  background-color: #e0e0e0;
+}
+
+.black-key:active {
+  background-color: #222;
+}
+
+/* SEQUENCER///////////////////////////////////////////////// */
+
+.sequencer-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: #333;
+  padding: 10px;
+}
+
+.sequencer-row {
+  display: flex;
+  gap: 2px;
+}
+
+.sequencer-cell {
+  width: 40px;
+  height: 40px;
+  background: #555;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.sequencer-cell.active {
+  background: #00ff9d;
+}
+/* controls///////////////////////////////////////////////////// */
+
+.controls {
+  margin: 20px;
+  display: flex;
+  gap: 10px;
+}
+
+.control-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 4px;
+  border: none;
+  background-color: #00ff9d;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.control-button:hover {
+  background-color: #00cc7d;
+}
+
+.current-step {
+  background: #444;
+}
+
+.current-step.active {
+  background: #00cc7d;
+}
+.sequencer-cell {
+  width: 25px; /* Reduced from 40px */
+  height: 40px;
+  background: #555;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Piano key styling */
+.sequencer-cell[data-note*="#"] {
+  background: #333;
+}
+
+.sequencer-cell[data-note*="#"].active {
+  background: #008855;
+}
+
+.sequencer-cell:not([data-note*="#"]) {
+  background: #777;
+}
+
+.sequencer-cell:not([data-note*="#"]).active {
+  background: #00ff9d;
+}
+
+.current-step[data-note*="#"] {
+  background: #444;
+}
+
+.current-step:not([data-note*="#"]) {
+  background: #666;
+}
+
+/* sampler */
+
+.piano-keyboard {
+  display: flex;
+  margin: 20px;
+}
+
+.piano-key {
+  width: 60px;
+  height: 200px;
+  border: 1px solid #000;
+  background: white;
+  margin: 0 2px;
+  cursor: pointer;
+}
+
+.piano-key:active {
+  background: #eee;
+}
